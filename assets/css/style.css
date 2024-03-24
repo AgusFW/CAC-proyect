@@ -1,0 +1,11 @@
+nav {
+    display: flex;
+    background-color: #840c1e;
+    justify-content: start;
+}
+
+a {
+    margin: 3%;
+    color: #fff;
+    text-decoration: none;
+}
