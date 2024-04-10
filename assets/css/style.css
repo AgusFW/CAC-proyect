@@ -22,6 +22,11 @@ header{
     display: flex;
     background-color: var(--color-primario);
 }
+
+header ul {
+    display: flex;
+}
+
 header img{
     height: 5rem;
     width: auto;
@@ -45,16 +50,23 @@ nav ul {
 nav ul li {
     margin: 1rem;
     color: #fff;
-    text-decoration: none;
 }
 
 nav ul li a {
     color: inherit;
     text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
 }
 
 h1{
     text-align: center;
 }
 
+
+.heroImg{
+    height: auto;
+    width: 100%;
+}
 
