@@ -19,22 +19,23 @@ body, html {
 }
 
 
-header,ul {
+nav {
          display: flex;
          background-color: var(--color-primario);
       }
-
-     
-
-
 
 nav ul {
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    align-items: center;
+    justify-content: center
 }
 
+nav img{
+    height: 20%;
+}
 nav ul li {
     margin: 1rem;
     color: #fff;
