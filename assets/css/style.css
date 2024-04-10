@@ -18,10 +18,18 @@ body, html {
     font-style: normal;
 }
 
-
+header{
+    display: flex;
+    background-color: var(--color-primario);
+}
+header img{
+    height: 5rem;
+    width: auto;
+    padding: 1em;
+}
 nav {
          display: flex;
-         background-color: var(--color-primario);
+        
       }
 
 nav ul {
@@ -33,9 +41,7 @@ nav ul {
     justify-content: center
 }
 
-nav img{
-    height: 20%;
-}
+
 nav ul li {
     margin: 1rem;
     color: #fff;
