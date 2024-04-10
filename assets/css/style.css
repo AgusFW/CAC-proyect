@@ -12,7 +12,10 @@ body, html {
 /* VARIABLES PARA REGULAR PROPIEDADES GENERALES*/
 
 :root {
-    --color-primario: #840c1e;
+    --color-nav: #840c1e;
+    --color-textoNav:#ffffff;
+    --color-footer:#292929;
+    --color-textoFooter:#ffffff;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
@@ -20,7 +23,7 @@ body, html {
 
 header{
     display: flex;
-    background-color: var(--color-primario);
+    background-color: var(--color-nav);
 }
 
 header ul {
@@ -49,7 +52,7 @@ nav ul {
 
 nav ul li {
     margin: 1rem;
-    color: #fff;
+    color: var(--color-textoNav);
 }
 
 nav ul li a {
@@ -62,11 +65,18 @@ nav ul li a {
 
 h1{
     text-align: center;
+    visibility: hidden;
 }
 
-
+section{
+    display: flex;
+}
 .heroImg{
     height: auto;
     width: 100%;
 }
 
+footer{
+    background-color:var(--color-footer);
+    color: var(--color-textoFooter) ;
+}
