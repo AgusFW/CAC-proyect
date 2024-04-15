@@ -3,8 +3,7 @@
 
 
 /* CORRIGE LOS MARGENES QUE PUEDEN AGREGARSE DE MANERA AUTOMATICA */
-body,
-html {
+body, html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -13,23 +12,33 @@ html {
 /* VARIABLES PARA REGULAR PROPIEDADES GENERALES*/
 
 :root {
-    --color-primario: #840c1e;
+    --color-nav: #840c1e;
+    --color-textoNav:#ffffff;
+    --color-footer:#292929;
+    --color-textoFooter:#ffffff;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
 }
 
-header {
+header{
     display: flex;
-    justify-content: start;
-    background-color: var(--color-primario);
+    background-color: var(--color-nav);
 }
 
-nav {
+header ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
+
+header img{
+    height: 5rem;
+    width: auto;
+    padding: 1em;
+}
+nav {
+         display: flex;
+        
+      }
 
 nav ul {
     display: flex;
@@ -40,26 +49,34 @@ nav ul {
     justify-content: center
 }
 
-nav img {
-    height: 20%;
-}
 
 nav ul li {
     margin: 1rem;
-    color: #fff;
-    text-decoration: none;
-    font-size: large;
+    color: var(--color-textoNav);
 }
 
 nav ul li a {
     color: inherit;
     text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
 }
 
-h1 {
+h1{
     text-align: center;
+    visibility: hidden;
 }
 
-footer {
+section{
+    display: flex;
+}
+.heroImg{
+    height: auto;
+    width: 100%;
+}
 
+footer{
+    background-color:var(--color-footer);
+    color: var(--color-textoFooter) ;
 }
