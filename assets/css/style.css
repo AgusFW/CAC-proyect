@@ -3,7 +3,8 @@
 
 
 /* CORRIGE LOS MARGENES QUE PUEDEN AGREGARSE DE MANERA AUTOMATICA */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -13,15 +14,15 @@ body, html {
 
 :root {
     --color-nav: #840c1e;
-    --color-textoNav:#ffffff;
-    --color-footer:#292929;
-    --color-textoFooter:#ffffff;
+    --color-textoNav: #ffffff;
+    --color-footer: #292929;
+    --color-textoFooter: #ffffff;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
 }
 
-header{
+header {
     display: flex;
     background-color: var(--color-nav);
 }
@@ -30,15 +31,16 @@ header ul {
     display: flex;
 }
 
-header img{
-    height: 5rem;
+header img {
+    height: 6rem;
     width: auto;
     padding: 1em;
 }
+
 nav {
-         display: flex;
-        
-      }
+    display: flex;
+
+}
 
 nav ul {
     display: flex;
@@ -63,20 +65,32 @@ nav ul li a {
     font-weight: 100;
 }
 
-h1{
+h1 {
     text-align: center;
-    visibility: hidden;
+    font-family: "Poppins", sans-serif;
 }
 
-section{
+section {
     display: flex;
 }
-.heroImg{
+
+.heroImg {
     height: auto;
-    width: 100%;
+    width: 50%;
+    border: solid 1px var(--color-footer);
 }
 
-footer{
-    background-color:var(--color-footer);
-    color: var(--color-textoFooter) ;
+footer {
+    background-color: var(--color-footer);
+    color: var(--color-textoFooter);
+}
+
+footer div {
+    display: flex;
+    justify-content: space-around;    
+}
+
+i.bi {
+    font-size: 2em; 
+    color: var(--color-textoNav);
 }
