@@ -3,7 +3,8 @@
 
 
 /* CORRIGE LOS MARGENES QUE PUEDEN AGREGARSE DE MANERA AUTOMATICA */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -18,11 +19,17 @@ body, html {
     font-style: normal;
 }
 
+header {
+    display: flex;
+    justify-content: start;
+    background-color: var(--color-primario);
+}
 
 nav {
-         display: flex;
-         background-color: var(--color-primario);
-      }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 nav ul {
     display: flex;
@@ -33,13 +40,15 @@ nav ul {
     justify-content: center
 }
 
-nav img{
+nav img {
     height: 20%;
 }
+
 nav ul li {
     margin: 1rem;
     color: #fff;
     text-decoration: none;
+    font-size: large;
 }
 
 nav ul li a {
@@ -47,8 +56,10 @@ nav ul li a {
     text-decoration: none;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
+footer {
 
+}
