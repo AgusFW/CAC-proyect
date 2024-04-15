@@ -74,9 +74,19 @@ section {
     display: flex;
 }
 
+menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el espacio en dos columnas */
+    gap: 20px; /* Espacio entre las columnas */
+  }
+  
+  menu div {
+    padding: 20px; /* Añade un padding para espaciar el contenido dentro de los divs */
+  }  
+
 .heroImg {
-    height: auto;
-    width: 50%;
+    height: 80%;
+    width: 100%;
     border: solid 1px var(--color-footer);
 }
 
