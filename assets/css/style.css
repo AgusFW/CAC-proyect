@@ -87,7 +87,8 @@ menu {
 .heroImg {
     height: 80%;
     width: 100%;
-    border: solid 1px var(--color-footer);
+    /* border: solid 1px var(--color-footer); */
+    object-fit: contain; /*con esto no se estiran y conservan la proporcion*/
 }
 
 footer {
