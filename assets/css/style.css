@@ -12,7 +12,7 @@ body, html {
 /* VARIABLES PARA REGULAR PROPIEDADES GENERALES*/
 
 :root {
-    --color-nav: #840c1e;
+    --color-nav: #B70000;
     --color-textoNav:#ffffff;
     --color-footer:#292929;
     --color-textoFooter:#ffffff;
@@ -22,7 +22,7 @@ body, html {
 }
 
 header{
-    display: flex;
+    /* display: flex; */
     background-color: var(--color-nav);
 }
 
@@ -36,10 +36,14 @@ header img{
     padding: 1em;
 }
 nav {
-         display: flex;
+         /* display: flex; */
+         color: #ffffff;
         
       }
-
+      
+.navbar-nav .nav-link {
+    color: var(--color-textoNav) !important;
+}
 nav ul {
     display: flex;
     list-style-type: none;
