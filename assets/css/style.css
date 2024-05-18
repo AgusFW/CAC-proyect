@@ -3,107 +3,109 @@
 
 
 /* CORRIGE LOS MARGENES QUE PUEDEN AGREGARSE DE MANERA AUTOMATICA */
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* VARIABLES PARA REGULAR PROPIEDADES GENERALES*/
 
 :root {
-    --color-nav: #B70000;
-    --color-textoNav:#ffffff;
-    --color-footer:#292929;
-    --color-textoFooter:#ffffff;
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    --color1: #B70000;
+    --color2: #ffffff;
+    --color3: #ff9900;
+    --color4: #292929;
     font-style: normal;
 }
 
-header{
-    /* display: flex; */
-    background-color: var(--color-nav);
-}
-
-header ul {
+/*VARIABLES FLEX*/
+.flex {
     display: flex;
 }
-/* 
-header img{
-    height: 5rem;
+
+.col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.content-center {
+    align-content: center;
+}
+
+
+/*NAVBAR***********************************/
+nav #imgnavbar {
+    height: 4.6rem;
     width: auto;
     padding: 1em;
-} */
-nav {
-         /* display: flex; */
-         color: #ffffff;
-        
-      }
-      
-.navbar-nav .nav-link {
-    color: var(--color-textoNav) !important;
 }
-nav ul {
-    display: flex;
+
+.navbarbafici {
+    background-color: var(--color1);
+}
+
+.navgroup {
     list-style-type: none;
+    /* Elimina los puntos de lista */
     padding: 0;
     margin: 0;
-    align-items: center;
-    justify-content: center
-}
-
-
-nav ul li {
-    margin: 1rem;
-    color: var(--color-textoNav);
-}
-
-nav ul li a {
-    color: inherit;
-    text-decoration: none;
+    gap: 10px;
+    /* Espacio entre los elementos */
     text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
 }
 
-h1{
-    text-align: center;
-    color: #ffffff;
-    /* visibility: hidden; */
+.navlinks {
+    color: var(--color2);
+    font-size: 0.9rem;
+    text-decoration: none;
+    /* Sin subrayado */
+    padding: 1rem;
+
 }
 
-.hero{
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */
-    height: 100vh;           /* Ajusta la altura de la sección si es necesario */
-}
-.heroImg{
-    height: auto;
-    width: 100%;
+.navlinks:hover {
+    color: #ff9900;
+    /* Color de los enlaces al pasar el mouse */
 }
 
-footer{
-    background-color:var(--color-footer);
-    color: var(--color-textoFooter) ;
+/***************************************************************/
+
+h1 {
+    visibility: hidden;
 }
 
 
-/*INTENTO */
-.hero-image {
+#hero {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.89);
     opacity: 10;
-
-
-    background: 
-    /* top, transparent red, faked with gradient */ 
-    linear-gradient(
-      rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.712)), url('/assets/img/fondo.jpg');
-
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.712)), url('/assets/img/fondo.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
- }
+}
+
+
+
+/* BOTON PROGRAMA*/
+.botonPrograma {
+
+    background-color: var(--color3);
+    border: none;
+    color: var(--color4);
+    padding: 0.9rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
