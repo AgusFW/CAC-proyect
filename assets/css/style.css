@@ -11,6 +11,9 @@ html {
     font-family: 'Poppins', sans-serif;
 }
 
+
+
+
 /* VARIABLES PARA REGULAR PROPIEDADES GENERALES*/
 
 :root {
@@ -21,7 +24,14 @@ html {
     font-style: normal;
 }
 
-/*VARIABLES FLEX*/
+/*CLASES GENERALES*/
+a{
+    text-decoration: none;
+}
+
+.text-center {
+    text-align: center;
+}
 .flex {
     display: flex;
 }
@@ -30,14 +40,32 @@ html {
     flex-direction: column;
 }
 
-.items-center {
+.align-items-center {
     align-items: center;
 }
 
-.content-center {
+.align-content-center {
     align-content: center;
 }
 
+.text-white{
+    color: var(--color2);
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.fade-in {
+    opacity: 0;
+    /* La imagen estará invisible al principio */
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.loaded {
+    opacity: 1;
+    /* La imagen se mostrará con opacidad al cargar */
+}
 
 /*NAVBAR***********************************/
 nav #imgnavbar {
@@ -47,7 +75,7 @@ nav #imgnavbar {
 }
 
 .navbarbafici {
-    background-color: var(--color1);
+    background-color: var(--color1) !important;
 }
 
 .navgroup {
@@ -63,8 +91,7 @@ nav #imgnavbar {
 .navlinks {
     color: var(--color2);
     font-size: 0.9rem;
-    text-decoration: none;
-    /* Sin subrayado */
+   
     padding: 1rem;
 
 }
@@ -77,12 +104,13 @@ nav #imgnavbar {
 /***************************************************************/
 
 h1 {
-    visibility: hidden;
+    display: none;
 }
 
 
 #hero {
     height: 100vh;
+    /*que ocupe el 100% del alto de la vista*/
     background-color: rgba(0, 0, 0, 0.89);
     opacity: 10;
     background:
@@ -97,15 +125,148 @@ h1 {
 
 /* BOTON PROGRAMA*/
 .botonPrograma {
-
     background-color: var(--color3);
     border: none;
     color: var(--color4);
     padding: 0.9rem;
-    text-align: center;
     text-decoration: none;
     font-size: 1rem;
     margin: 1rem;
     cursor: pointer;
     border-radius: 0.2rem;
+}
+/*CARDS*/
+#tarjetas{
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;   
+    padding: 1.5rem; 
+
+}
+
+.card a{
+    color: var(--color4);
+}
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20.5%;
+  }
+  
+  .container {
+     margin-top: 1rem;
+  }
+
+
+
+/*FOOTER*/  
+
+footer {
+    background-color: var(--color4);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+footer .iconos-footer a {
+    display: inline-block;
+    margin-right: 1rem; 
+  }
+
+footer .iconos-footer i{
+    font-size: 1.5rem;
+    color: #5c5c5c;
+
+}
+
+
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+    gap: 10px; /* Espacio entre los elementos */
+
+
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px; /* Bordes redondeados para cada imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para cada imagen */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
+    transition: transform 0.2s ease-in-out; /* Transición para el efecto de hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Efecto de agrandar la imagen al pasar el mouse */
+}
+
+
+/*TARJETAS*/
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; 
+    padding: 20px; 
+}
+
+.cards {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out; /* Transición para el efecto de hover */
+}
+
+
+
+.cards img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out; /* Transición para el efecto de hover en la imagen */
+}
+
+.cards:hover img {
+    transform: scale(1.05); /* Efecto de agrandar la imagen al pasar el mouse */
+}
+
+.cards-content {
+    padding: 15px;
+}
+
+.cards-content h3 {
+    margin: 0 0 10px;
+}
+
+.cards-content p {
+    margin: 0;
+    color: #666;
+}
+
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; 
+    }
 }
