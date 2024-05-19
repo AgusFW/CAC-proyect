@@ -26,15 +26,20 @@ html {
 }
 
 /*CLASES GENERALES*/
-a{
+a {
     text-decoration: none;
 }
 
 .text-center {
     text-align: center;
 }
+
 .flex {
     display: flex;
+}
+
+.grid {
+    display: grid;
 }
 
 .col {
@@ -49,12 +54,16 @@ a{
     align-content: center;
 }
 
-.text-white{
+.text-white {
     color: var(--color2);
 }
 
-.justify-content-center{
+.justify-content-center {
     justify-content: center;
+}
+
+.justify-items-center {
+    justify-items: center;
 }
 
 .fade-in {
@@ -94,7 +103,7 @@ nav #imgnavbar {
 .navlinks {
     color: var(--color2);
     font-size: 0.9rem;
-   
+
     padding: 1rem;
 
 }
@@ -122,6 +131,8 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    place-content: center;
+    place-items: center;
 }
 
 
@@ -141,101 +152,50 @@ h1 {
 }
 
 .botonPrograma:hover {
-    transform: scale(1.05); 
+    transform: scale(1.05);
     background-color: var(--color5);
 }
 
 /*CARDS*/
-#tarjetas{
+#tarjetas {
     padding: 2rem;
     gap: 1rem;
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 20%;   
-    padding: 1.5rem; 
+    width: 20%;
+    padding: 1.5rem;
 
 }
 
-.card a{
+.card a {
     color: var(--color4);
 }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     width: 20.5%;
-  }
-  
-  .container {
-     margin-top: 1rem;
-  }
-
-
-
-
-
-
-/* GALERIA */
-
-#gallery {
-    display: grid;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 10px; /* Espacio entre los elementos */
-    padding: 2rem 0rem 0rem ;
-
-
-}
-
-#gallery img {
-    border-radius: 8px; /* Bordes redondeados para cada imagen */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para cada imagen */
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
-    transition: transform 0.2s ease-in-out; 
-}
-
-#gallery img:nth-child(1) {
-   grid-column: 1/3;   
-   grid-row: 3 / 4;
-} 
-#gallery img:nth-child(2) {
-    grid-column: 1/4;   
-    grid-row: 1 / 3;
- } 
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
-    transition: transform 0.2s ease-in-out; /* Transición para el efecto de hover */
-}
-
-.gallery
-.gallery-item:hover img {
-    transform: scale(1.05); /* Efecto de agrandar la imagen al pasar el mouse */
-}
-
-
-/*TARJETAS*/
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
 }
 
 .container {
+    margin-top: 1rem;
+}
+
+
+
+
+
+/*TARJETAS*/
+
+.container {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px; 
-    padding: 20px; 
+    gap: 20px;
+    padding: 20px;
 }
 
 .cards {
@@ -243,7 +203,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: transform 0.2s ease-in-out; /* Transición para el efecto de hover */
+    transition: transform 0.2s ease-in-out;
+    /* Transición para el efecto de hover */
 }
 
 
@@ -256,7 +217,7 @@ body {
 }
 
 .cards:hover img {
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .cards-content {
@@ -273,41 +234,119 @@ body {
 }
 
 
-/*FOOTER*/  
+
+/* GALERIA */
+
+
+.gallery {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    place-content: center;
+    place-items: center;
+    padding: 2rem;
+
+}
+
+
+
+.gallery-img {
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.432);
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+}
+
+.gallery .gallery-img:nth-child(1) {
+    background-color: var(--color1);
+    color: var(--color2);
+    text-align: center;
+    place-content: center;
+    place-items: center;
+    grid-column: 1 / 3;
+    grid-row: 1 / 4;
+}
+
+.gallery .gallery-img:nth-child(2) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+/* BA LOGOS */
+.balogos {
+    padding: 2rem;
+
+}
+
+.balogos .flex {
+    gap: 3rem;
+}
+
+.balogos img {
+    width: 10%;
+    max-width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/*FOOTER*/
 
 footer {
     background-color: var(--color4);
-    /* padding: 1rem; */
     text-align: center;
     color: white;
+    padding: 2rem;
+}
+
+
+.iconos-footer {
+    height: auto;
+    width: 20%;
 }
 
 footer .iconos-footer a {
     display: inline-block;
-    margin-right: 1rem; 
-  }
+    margin-right: 1rem;
+}
 
-footer .iconos-footer i{
+footer .iconos-footer i {
     font-size: 1.5rem;
     color: #5c5c5c;
 
 }
 
 
-.footer-logo{
+.footer-logo {
     height: auto;
     width: auto;
     gap: 2rem;
 }
 
 .footer-logo img {
-    height: 10%; /* Ajusta la altura según tus necesidades */
-    width: 20%; /* Mantiene la proporción de la imagen */
+    height: 10%;
+    /* Ajusta la altura según tus necesidades */
+    width: 20%;
+    /* Mantiene la proporción de la imagen */
     transition: transform 0.3s ease-in-out;
- 
+
 }
 
 /************************ NOSOTROS *******************************/
+
+.nosotrosinfo{
+    padding: 5rem;
+}
 
 /* img{
     height: 100%;
@@ -322,36 +361,43 @@ footer .iconos-footer i{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Media Query para dispositivos pequeños */
+/* MEDIA QUERY CELULARES */
 @media (max-width: 600px) {
-  
+
     .logo-seccion {
-        flex-direction: column; /* Cambiar a columna para apilar verticalmente */
-        align-items: center;
+        flex-direction: column;
+           align-items: center;
     }
+
     .container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
+
+    .gallery {
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+    }
+
+    .gallery .gallery-img:nth-child(1),
+    .gallery .gallery-img:nth-child(2) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .balogos .flex{
+        gap: 0.5rem;
+    }
+
+
+    .balogos img {
+        width:20%;
+        max-width: 100px;
+        height: auto;
+        object-fit: contain;
+    }
+
     
-.gallery {
-    grid-template-columns: 1fr 1fr;
 
-    /* padding: 2rem; */
-
-
-}
 }
