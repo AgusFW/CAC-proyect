@@ -97,7 +97,69 @@ a {
 }
 
 /*NAVBAR***********************************/
-nav #imgnavbar {
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color1);
+    color: var(--color2);
+}
+
+.navbar-brand img{
+    height: 3rem;
+    width: auto;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-menu li a {
+    text-decoration: none;
+    color: var(--color2);
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color1);
+        position: absolute;
+        top: 4rem;
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+
+
+/* nav #imgnavbar {
     height: 4.6rem;
     width: auto;
     padding: 1em;
@@ -109,11 +171,10 @@ nav #imgnavbar {
 
 .navgroup {
     list-style-type: none;
-    /* Elimina los puntos de lista */
+
     padding: 0;
     margin: 0;
     gap: 10px;
-    /* Espacio entre los elementos */
     text-transform: uppercase;
 }
 
@@ -127,8 +188,7 @@ nav #imgnavbar {
 
 .navlinks:hover {
     color: #ff9900;
-    /* Color de los enlaces al pasar el mouse */
-}
+} */
 
 /***************************************************************/
 
