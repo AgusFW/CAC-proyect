@@ -68,15 +68,30 @@ a {
 
 .fade-in {
     opacity: 0;
-    /* La imagen estará invisible al principio */
     transition: opacity 1s ease-in-out;
 }
 
 .fade-in.loaded {
     opacity: 1;
-    /* La imagen se mostrará con opacidad al cargar */
+ 
 }
 
+.cards-content p{
+    padding: 1rem;
+}
+
+.cards-content h3{
+    font-size: 1.3rem;
+    color: var(--color4);
+}
+.badgeRojo {
+    background-color: var(--color1);
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 0.8rem;
+  }
 
 
 /*NAVBAR***********************************/
@@ -119,6 +134,9 @@ h1 {
     display: none;
 }
 
+h2{
+    padding-top:2rem;
+}
 
 #hero {
     height: 100vh;
@@ -351,6 +369,12 @@ footer .iconos-footer i {
 }
 
 @media only screen and (max-width: 1000px) {
+    
+.container {  
+    grid-template-columns: repeat(2, minmax(200px, 2fr));
+    gap: 10px;
+    padding: 10px;
+}
 
 }
 
@@ -358,7 +382,7 @@ footer .iconos-footer i {
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 
     .logo-seccion {
         flex-direction: column;
