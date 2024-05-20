@@ -92,7 +92,9 @@ a {
     border-radius: 5px;
     font-size: 0.8rem;
   }
-
+.hidden{
+    display: none;
+}
 
 /*NAVBAR***********************************/
 nav #imgnavbar {

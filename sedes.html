@@ -8,27 +8,37 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/img/buho.png" type="image/png"> 
   
-    <title>Buenos Aires Festival Internacional de Cine Independiente</title>
+    <title>Sedes - BAFICI</title>
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-custom navbarbafici">
+      <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg navbarbafici border-0" data-bs-theme="dark">
         <div class="container-fluid">
-          <a href="index.html"><img src="assets/img/logobafici.png" id="imgnavbar" alt="Logo Bafici"></a>
-  
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/logobafici.png" id="imgnavbar" alt="Logo Bafici">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-  
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navgroup flex">
-              <li><a href="index.html" class="navlinks">Home</a></li>
-              <li><a href="about.html" class="navlinks">Nosotros</a></li>
-              <li><a href="contact.html" class="navlinks">Programacion</a></li>
-              <li><a href="Registrate.html" class="navlinks">Contacto</a></li>
-              </ul>
-            </div>
+          <div class="collapse navbar-collapse border-0" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sedes.html">Sedes</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="programacion.html">Programacion</a>
+              </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -39,7 +49,7 @@
       <section class="text-center">
         <h2>Nuestras Sedes</h2>
         <div class="container grid">
-          
+
           <a href="http://www.incaa.gov.ar/complejo-gaumont" target="_blank">
             <div class="cards">
               <img src="assets/img/cinegaumont.jpg" alt="Imagen Cine Gaumont">
@@ -86,7 +96,7 @@
 
           <a href="https://buenosaires.gob.ar/cultura/museos/museodelcine" target="_blank">
             <div class="cards">
-              <img src="assets/img/museodelcine .jpg" alt="Imagen Museo del Cine">
+              <img src="assets/img/museodelcine.jpg" alt="Imagen Museo del Cine">
               <div class="cards-content">
                 <h3>Museo del Cine</h3>
                 <span class="badgeRojo">Agustín R. Caffarena 51</span>
@@ -104,6 +114,7 @@
               </div>
             </div>
           </a>
+        </div>
       </section>
     </main>
 
@@ -177,9 +188,7 @@
       ></a>
       <a href="https://ar.pinterest.com/"><i class="bi bi-pinterest"></i></a>
       <a href="https://ar.linkedin.com/"><i class="bi bi-linkedin"></i></a>
-      <br />
       <p>&reg; 2024 Todos los derechos reservados.</p>
-      <br />
-    </footer>
+      </footer>
   </body>
 </html>
