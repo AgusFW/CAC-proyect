@@ -335,38 +335,72 @@ footer .iconos-footer i {
 
 .footer-logo img {
     height: 10%;
-    /* Ajusta la altura según tus necesidades */
     width: 20%;
-    /* Mantiene la proporción de la imagen */
     transition: transform 0.3s ease-in-out;
 
 }
 
 /************************ NOSOTROS *******************************/
 
-.nosotrosinfo{
+.nosotrosinfo {
     padding: 5rem;
 }
 
-/* img{
+/************************ SEDES *******************************/
+.sedes {
+
+    height: 100vh;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    place-content: center;
+    place-items: center;
+    padding: 5rem;
+    
+
+}
+
+
+
+.cardSedes-contenedor{
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.432);
+    overflow: hidden;
     height: 100%;
-    width: auto;
-} */
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
 
+.cardSedes-imagen {
+    
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.432);
+    overflow:hidden;    
+    max-height: auto;
+    object-fit: cover;
+    transition: transform ease-in-out ,opacity .2s  ease-in-out;
+}
 
+.cardSedes-imagen:hover {
+    transform: scale(1.05);
+    opacity: 0.8; 
+}
 
+@media only screen and (max-width: 1000px) {
 
+}
 
+@media only screen and (max-width: 700px) {
 
+}
 
-
-
-/* MEDIA QUERY CELULARES */
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
 
     .logo-seccion {
         flex-direction: column;
-           align-items: center;
+        align-items: center;
     }
 
     .container {
@@ -386,18 +420,21 @@ footer .iconos-footer i {
         grid-row: auto;
     }
 
-    .balogos .flex{
+    .balogos .flex {
         gap: 0.5rem;
     }
 
 
     .balogos img {
-        width:20%;
+        width: 20%;
         max-width: 100px;
         height: auto;
         object-fit: contain;
     }
 
-    
+
 
 }
+
+
+
