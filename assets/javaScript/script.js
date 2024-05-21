@@ -119,3 +119,13 @@ nombre.addEventListener("input", function (event) {
     nombre.setCustomValidity("");
   }
 });
+
+
+/*alert*/
+document.getElementById('show-alert').addEventListener('click', function() {
+    document.getElementById('alert').classList.remove('hidden');
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('alert').classList.add('hidden');
+});
