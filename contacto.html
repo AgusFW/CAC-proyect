@@ -26,76 +26,50 @@
         </ul>
       </nav>    
     </header>
-  
-    <menu>
+     
+    <section class="form">
+        <h2>Formulario de registro:</h2>
+        <form action="show-data.html" method="post" target="_blank">
 
-      
-      <h2>Formulario de registro:</h2>
-      <form action="show-data.html" method="post" target="_blank">
-        <label for="firstname">Nombre:</label>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="Ingrese su nombre aqui..."
-        />
-        <br /><br />
-        <label for="lastname">Apellido:</label>
-        <input
-          type="text"
-          name="lastname"
-          placeholder="Ingrese su apellido aqui..."
-        />
-        <br /><br />
-        <label for="street">dirección:</label>
-        <input
-          type="text"
-          name="address"
-          placeholder="Ingrese su dirección aqui..."
-        />
-        <br /><br />
-        <label for="city">Ciudad:</label>
-        <input type="text" name="city" value="C.A.B.A." />
-        <br /><br />
-        <label for="zipcode">Código Postal:</label>
-        <input
-          type="text"
-          name="zipcode"
-          placeholder="Ingrese su código postal aqui..."
-        />
-        <br /><br />
-        <label for="birthdate">Fecha de nacimiento:</label>
-        <input type="date" name="birthdate" />
-        <br /><br />
-        <p>
-          Género
-          <input type="radio" name="gender" value="hombre" checked />Hombre
-          <input type="radio" name="gender" value="mujer" /> Mujer
-          <input type="radio" name="gender" value="otro" /> Otro
-        </p>
-        <br />
-        <p>
-          Estudios:
-          <input
-            type="checkbox"
-            name="estudio"
-            value="primarios"
-            checked
-          />Primarios
-          <input type="checkbox" name="estudio" value="secundarios" />
-          Secundarios
-          <input type="checkbox" name="estudio" value="terciarios" /> Terciarios
-          <input type="checkbox" name="estudio" value="universitarios" />
-          Universitarios
-          <input type="checkbox" name="estudio" value="otro" /> Otro
-        </p>
-        <br />
-        <input type="submit" value="Enviar" />
-      </form>
-      <p>
-        Si usted presiona "Enviar" la información será enviada a la página
-        "show-data.html"
-      </p>
-    </menu>
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" placeholder="Ingrese nombre" required/>
+        
+          <label for="lastname">Apellido:</label>
+          <input type="text" name="lastname" placeholder="Ingrese apellido" required/>
+  
+          <label for="street">dirección:</label>
+          <input type="text" name="address" placeholder="Ingrese dirección"/>
+          
+          <label for="city">Ciudad:</label>
+          <input type="text" name="city" value="C.A.B.A." />
+    
+          <label for="zipcode">Código Postal:</label>
+          <input type="text" name="zipcode" placeholder="Ingrese código postal "/>
+     
+          <label for="birthdate">Fecha de nacimiento:</label>
+          <input type="date" name="birthdate" />
+    
+          <p>Genero</p>
+          <div>
+            <input type="radio" name="gender" value="hombre" checked />Hombre
+            <input type="radio" name="gender" value="mujer" /> Mujer
+            <input type="radio" name="gender" value="otro" /> Otro
+          </div>
+          <p>Estudios:  </p>
+          <div>
+            <input type="checkbox" name="estudio" value="primarios"checked/>Primarios
+            <input type="checkbox" name="estudio" value="secundarios"/>Secundarios
+            <input type="checkbox" name="estudio" value="terciarios" /> Terciarios
+            <input type="checkbox" name="estudio" value="universitarios" />Universitarios
+            <input type="checkbox" name="estudio" value="otro" /> Otro 
+          </div>
+          <input type="submit" value="Enviar" />
+        </form>
+
+      </section>
+    
+     
+
 
     <footer>
       <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
@@ -110,7 +84,7 @@
       <br />
     </footer>
 
-<script src="assets/javaScript/script.js"></script>
+  <script src="assets/javaScript/script.js"></script>
 
   </body>
 </html>

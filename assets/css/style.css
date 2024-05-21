@@ -168,38 +168,6 @@ align-items: center;
 }
 
 
-
-/* nav #imgnavbar {
-    height: 4.6rem;
-    width: auto;
-    padding: 1em;
-}
-
-.navbarbafici {
-    background-color: var(--color1) !important;
-}
-
-.navgroup {
-    list-style-type: none;
-
-    padding: 0;
-    margin: 0;
-    gap: 10px;
-    text-transform: uppercase;
-}
-
-.navlinks {
-    color: var(--color2);
-    font-size: 0.9rem;
-
-    padding: 1rem;
-
-}
-
-.navlinks:hover {
-    color: #ff9900;
-} */
-
 /***************************************************************/
 
 h1 {
@@ -386,42 +354,36 @@ footer img{
 
 
 /************************ NOSOTROS *******************************/
-
-.nosotrosinfo {
-    padding: 5rem;
-   
-
+.nosotros-title{
+    flex-direction: column;
 }
 
-.nosotrosinfo .nosotros-contenedor{
-   
-    color: #B70000;
+.nosotros-container {  
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 10em;
 }
 
 
 
-/* Container for flexboxes */
-.row {
-    display: flex;
-    flex-wrap: wrap;
+.nosotrosinfo .nosotros .nosotros-container img{
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.432);
+    overflow: hidden;
+    width: 80%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.nosotrosinfo .nosotros .nosotros-container img:hover {
+    transform: scale(1.05);
+
+}
+/************CONTACTO*******************************************/
+input:invalid {
+    border: 2px solid red;
   }
-  
-  /* Create four equal columns */
-  .column {
-    flex: 50%;
-    padding: 50px;
-  }
-
-
-
-
-
-
-
-
-
-
-
 
 /************************ SEDES *******************************/
 .sedes {  
@@ -490,8 +452,16 @@ footer img{
 
 }
 
-@media only screen and (max-width: 700px) {
 
+/*************MEDIA QUERY*****************************/
+@media only screen and (max-width: 1000px) {
+    .nosotros-container {  
+        grid-template-columns: 1fr;
+        padding: 0.2em;
+        text-align: center;
+        place-items: center;
+        
+    }
 
 }
 
@@ -509,7 +479,7 @@ footer img{
     .container {
         grid-template-columns: 1fr;
     }
-
+/*INDEX*/
     .gallery {
         width: 100%;
         grid-template-columns: 1fr;
@@ -535,6 +505,14 @@ footer img{
         object-fit: contain;
     }
 
+/*NOSOTRPS*/    
+.nosotros-container {  
+    grid-template-columns: 1fr;
+    padding: 1em;
+    text-align: center;
+    place-items: center;
+    
+}
 
 
 }

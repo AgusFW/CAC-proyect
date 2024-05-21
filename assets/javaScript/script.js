@@ -107,3 +107,15 @@ Estudios: ${Array.from(form.querySelectorAll('input[name="estudio"]:checked')).m
 
 
 
+/*leandro*/
+const nombre = document.getElementById("nombre");
+
+nombre.addEventListener("input", function (event) {
+  if (nombre.validity.typeMismatch) {
+    nombre.setCustomValidity(
+      "¡Se esperaba una dirección de correo electrónico!",
+    );
+  } else {
+    nombre.setCustomValidity("");
+  }
+});
