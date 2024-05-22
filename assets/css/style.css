@@ -326,7 +326,6 @@ footer {
     padding: 2rem;
 }
 
-
 .iconos-footer {
     height: auto;
     width: 20%;
@@ -344,13 +343,9 @@ footer .iconos-footer i {
 }
 
 footer img{
-
     width: 50%;
     gap: 2rem;
 }
-
-
-
 
 
 /************************ NOSOTROS *******************************/
@@ -364,7 +359,6 @@ footer img{
     gap: 20px;
     padding: 10em;
 }
-
 
 
 .nosotrosinfo .nosotros .nosotros-container img{
@@ -384,8 +378,6 @@ footer img{
 input:invalid {
     border: 2px solid red;
   }
-
-
 
   .hidden {
     display: none;
@@ -558,15 +550,44 @@ section.form input[type="submit"]:hover {
 /*ENVIO EXITOSO*/
 .envio div{
     color: rgb(0, 0, 0);
-    height: 100vh;
-    font-size: 1.5em;
-    
-
+    height: 100%;
+    font-size: 1em;
 }
 
 .envio-content{
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
+}
+
+/********************ENVIO EXITOSO**************************/
+.envio-content {
+    width: 50%;
+    min-height: 100%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+@media (max-width: 576px) {
+    .envio-content {
+        width: 90%;
+    }
+}
+
+.envio img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.envio ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.envio li {
+    margin-bottom: 10px;
 }
 
 /*************MEDIA QUERY*****************************/
