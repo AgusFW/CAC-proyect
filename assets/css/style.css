@@ -184,7 +184,7 @@ h2{
     background-color: rgba(0, 0, 0, 0.89);
     opacity: 10;
     background:
-        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.712)), url('/assets/img/fondo.jpg');
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.712)), url('https://agusfw.github.io/CAC-proyect/assets/img/fondo.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
