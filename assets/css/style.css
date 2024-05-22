@@ -360,7 +360,7 @@ footer img{
 
 .nosotros-container {  
     grid-template-columns: repeat(2, minmax(200px, 1fr));
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     gap: 20px;
     padding: 10em;
 }
