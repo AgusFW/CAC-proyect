@@ -616,7 +616,15 @@ section.form input[type="submit"]:hover {
 
 @media only screen and (max-width: 600px) {
 
+
     /*INDEX*/
+    #hero{
+        height:100vh;
+    }
+    .logo-seccion{
+        display: flex;
+    }
+
     .gallery {
         width: 100%;
         grid-template-columns: 1fr;
