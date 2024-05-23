@@ -622,17 +622,18 @@ section.form input[type="submit"]:hover {
         height:100vh;
         margin: 0px;
     }
-    section .logo-seccion{
+    section .flex .logo-seccion{
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
     }
-
+/* 
     .logo-seccion img {
         max-width: 100%; 
         height: auto;
-    }
+    } */
 
     .gallery {
         width: 100%;
@@ -664,10 +665,7 @@ section.form input[type="submit"]:hover {
         margin-right: 1rem;
     }
 
-    .logo-seccion {
-        flex-direction:row;
-        align-items: center;
-    }
+
 
     .container {
         grid-template-columns: 1fr;
