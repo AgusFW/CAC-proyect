@@ -11,5 +11,4 @@
 <p align="center">
  Leandro Gonzalez Anriquez - Agustina Witis- Rocio Vila- Lucas Diaz
 </p>
-
-  <a align="center" href="https://agusfw.github.io/CAC-proyect/">LINK WEB</a>
+<div align="center"><a href="https://agusfw.github.io/CAC-proyect/"  target="_blank"k>LINK WEB</a></div>
