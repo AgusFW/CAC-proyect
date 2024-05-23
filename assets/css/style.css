@@ -458,27 +458,7 @@ input:invalid {
     opacity: 0.8; 
 }
 
-@media only screen and (max-width: 1000px) {
-    
-.container {  
-    grid-template-columns: repeat(2, minmax(200px, 2fr));
-    gap: 10px;
-    padding: 10px;
-}
 
-.gallery {
-    height: auto;
-    width: 90%;
-    margin: 0 auto;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
-    place-content: center;
-    place-items: center;
-    padding: 2rem;
-}
-
-}
 /*CONTACTO*/
 
 section.form {
@@ -570,11 +550,7 @@ section.form input[type="submit"]:hover {
     border-radius: 8px;
 }
 
-@media (max-width: 576px) {
-    .envio-content {
-        width: 90%;
-    }
-}
+
 
 .envio img {
     max-width: 100px;
@@ -591,10 +567,34 @@ section.form input[type="submit"]:hover {
 }
 
 /*************MEDIA QUERY*****************************/
+
+
+@media only screen and (max-width: 1000px) {
+    
+    .container {  
+        grid-template-columns: repeat(2, minmax(200px, 2fr));
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .gallery {
+        height: auto;
+        width: 90%;
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+        place-content: center;
+        place-items: center;
+        padding: 2rem;
+    }
+    
+}
+
 @media only screen and (max-width: 1000px) {
     .nosotros-container {  
         grid-template-columns: 1fr;
-        padding: 0.2em;
+        padding: 0.3em;
         text-align: center;
         place-items: center;
         
@@ -626,7 +626,7 @@ section.form input[type="submit"]:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem;
+
     }
 
     .logo-seccion img {
@@ -665,7 +665,7 @@ section.form input[type="submit"]:hover {
     }
 
     .logo-seccion {
-        flex-direction: column;
+        flex-direction:row;
         align-items: center;
     }
 
