@@ -626,6 +626,7 @@ section.form input[type="submit"]:hover {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 1rem;
     }
 
     .logo-seccion img {
