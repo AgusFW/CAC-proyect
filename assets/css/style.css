@@ -623,6 +623,13 @@ section.form input[type="submit"]:hover {
     }
     .logo-seccion{
         display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo-seccion img {
+        max-width: 100%; 
+        height: auto;
     }
 
     .gallery {
