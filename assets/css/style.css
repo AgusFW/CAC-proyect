@@ -620,6 +620,7 @@ section.form input[type="submit"]:hover {
     /*INDEX*/
     #hero{
         height:100vh;
+        margin: 0px;
     }
     .logo-seccion{
         display: flex;
