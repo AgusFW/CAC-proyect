@@ -1,0 +1,17 @@
+{
+  "name": "cac-proyect",
+  "description": "<p align=\"center\">\r   <img src=\"https://github.com/AgusFW/CAC-proyect/blob/Leandro/assets/img/buho.png?raw=true\" alt=\"Logo BAFICI\">\r </p>\r <p align=\"center\">\r  <strong> BAFICI - Buenos Aires Festival Internacional de Cine Independiente</strong>\r </p>\r <p align=\"center\">\r   (Propuesta de mejora de imagen del festival de la Ciudad de Buenos Aires en el marco de la primera parte de formación de Front End \"Codo a Codo\").\r </p>\r <p align=\"center\">\r  Leandro Gonzalez Anriquez - Agustina Witis- Rocio Vila- Lucas Diaz\r </p>\r <div align=\"center\"><a href=\"https://agusfw.github.io/CAC-proyect/\"  target=\"_blank\"k>LINK WEB</a></div>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.10.0"
+  }
+}
