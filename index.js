@@ -11,7 +11,7 @@ const __dirname = dirname(__filename); // c://sdfsdfds/
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // middlewares
 app.use(express.json())
