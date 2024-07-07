@@ -138,6 +138,67 @@ app.get('/admin', verifyToken, (req, res) => {
   res.status(403).send('No tienes permisos para acceder a esta ruta');
 })
 
+//---------SEDES--------
+
+app.get('/api/sedes', async (req, res) => {
+  try {
+    const connection = await pool.getConnection();
+    const [rows] = await connection.query('SELECT * FROM sedes');
+    connection.release();
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error('Error al obtener las sedes', error);
+    res.status(500).json({ message: 'Error interno del servidor' });
+  }
+});
+
+
+app.post('/api/sede', async (req, res) => {
+  const { nombre, direccion, link, direccion_img } = req.body;
+
+  try {
+    // Validación de campos requeridos
+    // if (!nombre || !direccion || !link || !direccion_img) {
+    //   return res.status(400).json({ message: 'Todos los campos son requeridos' });
+    // }
+
+    const connection = await pool.getConnection();
+    const [result] = await connection.query(
+      'INSERT INTO sedes (nombre, direccion, link, direccion_img) VALUES (?, ?, ?, ?)',
+      [nombre, direccion, link, direccion_img]
+    );
+    connection.release();
+
+    res.status(201).json({ message: 'Sede creado exitosamente', sedeId: result.insertId });
+  } catch (error) {
+    console.error('Error al crear sede:', error.message);
+    res.status(500).json({ message: 'Error interno del servidor al crear sede' });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+app.get('/admin', verifyToken, (req, res) => {
+  if (req.user.rol === 'admin') {
+    res.sendFile(__dirname + '/UsersAdmin.html'); // c://sdfsdfds/admin.html
+  }
+  res.status(403).send('No tienes permisos para acceder a esta ruta');
+})
+
+
+
+
+
+
 app.get('/logout', (req, res) => {
   res.clearCookie('token').send('Logout exitoso');
 })
