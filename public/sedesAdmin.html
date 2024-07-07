@@ -1,205 +1,56 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Web dedicada a Buenos Aires Festival de Cine Independiente">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="icon" href="assets/img/buho.png" type="image/png" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>SEDES | BAFICI</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="#" class="navbar-brand" href="#"><img src="assets/img/logobafici.png" alt="Logo Bafici"></a>
-            </div>
-            <div class="navbar-toggle" id="navbar-toggle">&#9776;</div>
-            <ul class="navbar-menu" id="navbar-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="sedes.html">Sedes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="text-bg-dark p-3">
-        <div class="p-5">
-            <h1>Administración de Sedes</h1>
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <table class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Dirección</th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="sedesTableBody">
-                </tbody>
-            </table>
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" id="agregarSedeBtn" data-bs-toggle="modal" data-bs-target="#crearSedeModal">
-                Agregar Sede
-            </button>
-        </div>
-    </section>
-    
-    <div class="modal fade" id="crearSedeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Crear Sede</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="crearSedeForm">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="direccion" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="ciudad" class="form-label">Ciudad</label>
-                            <input type="text" class="form-control" id="ciudad" name="ciudad" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Crear</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-    <script src="assets/javaScript/sedesAdmin.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-</body>
-</html> -->
+    <link rel="icon" href="assets/img/buho.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
-
-<!-- 
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Sidebar 01</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/sidebar.css">
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>SEDES ADMIN | BAFICI</title>
   </head>
-  <body>
-		
-		<div class="wrapper d-flex align-items-stretch">
-			<nav id="sidebar">
-				<div class="p-4 pt-5">
-                <img src="assets/img/logobafici.png" alt="">
-	        <ul class="list-unstyled components mb-5">
-	          <li class="active">
-	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-	            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-	            </ul>
-	          </li>
-	          <li>
-	              <a href="#">About</a>
-	          </li>
-	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="#">Page 1</a>
-                </li>
-                <li>
-                    <a href="#">Page 2</a>
-                </li>
-                <li>
-                    <a href="#">Page 3</a>
-                </li>
-              </ul>
-	          </li>
-	          <li>
-              <a href="#">Portfolio</a>
-	          </li>
-	          <li>
-              <a href="#">Contact</a>
-	          </li>
-	        </ul>
 
-	       
-	      </div>
-    	</nav>
 
-      <div id="content" class="p-4 p-md-5">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
+<body>
+    <div class="wrapper">
+        <div class="sidebar">
+            <img src="assets/img/logobafici.png" alt="" id="logo">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="UsersAdmin.html"><i class="fa fa-user"></i>Usuarios</a></li>
+                <li><a href="sedesAdmin.html"><i class="fa fa-line-chart"></i>Sedes</a></li>
+                <!-- <li><a href="#"><i class="fa fa-comment-o"></i>Comments</a></li>
+                <li><a href="#"><i class="fa fa-gears"></i>Settings</a></li>
+                <li><a href="#"><i class="fa fa-address-book"></i>Contact</a></li>
+                <li><a href="#"><i class="fa fa-map-pin"></i>Map</a></li> -->
+            </ul> 
 
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
-              <i class="fa fa-bars"></i>
-              <span class="sr-only"></span>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
+        </div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
 
-        <h2 class="mb-4">Sidebar #01</h2>
-        <section class="text-bg-dark p-3">
-            <div class="p-5">
-                <h1>Administración de Sedes</h1>
-            </div>
-    
-            <div class="d-flex justify-content-center">
-                <table class="table table-dark table-striped">
-                    <thead>
+        <div class="main_content">
+            <div class="header">
+                <button class="toggler"><i class="fa fa-bars"></i></button>
+            </div>  
+            <section class=" p-3">
+                <div class="p-5">
+                    <h2>Administración de Sedes</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                      <thead>
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
@@ -207,126 +58,119 @@
                             <th scope="col">Ciudad</th>
                             <th scope="col">Acciones</th>
                         </tr>
-                    </thead>
-                    <tbody id="sedesTableBody">
-                    </tbody>
-                </table>
-            </div>
-    
-            <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-primary" id="agregarSedeBtn" data-bs-toggle="modal" data-bs-target="#crearSedeModal">
-                    Agregar Sede
-                </button>
-            </div>
-        </section>
+                      </thead>
+                      
+                      <tbody id="sedesTableBody">
 
-
-      </div>
-		</div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-        <script src="assets/javaScript/sedesAdmin.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/js/popper.js"></script>
-    <script src="assets/js/js/bootstrap.min.js"></script>
-    <script src="assets/js/js/main.js"></script>
-  </body>
-</html> -->
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Sidebar</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/sidebar.css">
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/sidebar.css">
-</head>
-<body>
-    <div class="wrapper">
-        <div class="sidebar">
-            <h2>BBBOOTSTRAP</h2>
-            <ul>
-                <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-user"></i>Users</a></li>
-                <li><a href="#"><i class="fa fa-line-chart"></i>Timeline</a></li>
-                <li><a href="#"><i class="fa fa-comment-o"></i>Comments</a></li>
-                <li><a href="#"><i class="fa fa-gears"></i>Settings</a></li>
-                <li><a href="#"><i class="fa fa-address-book"></i>Contact</a></li>
-                <li><a href="#"><i class="fa fa-map-pin"></i>Map</a></li>
-            </ul> 
-            <div class="social_media">
-                <a href="#"><i class="fa fa-facebook-f"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-        </div>
-        <div class="main_content">
-            <div class="header">
-                <button class="toggler"><i class="fa fa-bars"></i></button>
-            </div>  
-            <div class="info">
-                <section class="text-bg-dark p-3">
-                    <div class="p-5">
-                        <h1>Administración de Sedes</h1>
-                    </div>
-            
-                    <div class="d-flex justify-content-center">
-                        <table class="table table-dark table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Dirección</th>
-                                    <th scope="col">Ciudad</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="sedesTableBody">
-                            </tbody>
-                        </table>
-                    </div>
-            
+                      </tbody>
+                    </table>
                     <div class="d-flex justify-content-center">
                         <button type="button" class="btn btn-primary" id="agregarSedeBtn" data-bs-toggle="modal" data-bs-target="#crearSedeModal">
                             Agregar Sede
                         </button>
                     </div>
-                </section>
-            </div>
+                  </div>
+        
+
+            </section>
+
         </div>
+
     </div>
+    <div class="toast center-toast" data-autohide="false">
+        <div class="toast-header">
+          <strong class="mr-auto">Confirmar Eliminación</strong>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body">
+          ¿Estás seguro de que deseas eliminar esta sede?
+          <button id="confirmarEliminarBtn" class="btn btn-danger">Confirmar</button>
+        </div>
+      </div>       
 
-    <script src="script.js"></script>
-
-    <script>
-        document.querySelector('.toggler').addEventListener('click', function() {
-          document.querySelector('.sidebar').classList.toggle('active');
-      });
-      </script>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-          <script src="assets/javaScript/sedesAdmin.js"></script>
-      
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Modal de Edición -->
+<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editarModalLabel">Editar Sede</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editarSedeForm">
+            <input type="hidden" id="editSedeId">
+            <div class="mb-3">
+              <label for="editNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="editNombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="editSala" class="form-label">Sala</label>
+              <input type="text" class="form-control" id="editSala" required>
+            </div>
+            <div class="mb-3">
+              <label for="editDireccion" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="editDireccion" required>
+            </div>
+            <div class="mb-3">
+              <label for="editDireccionImg" class="form-label">URL Imagen</label>
+              <input type="text" class="form-control" id="editDireccionImg" required>
+            </div>
+            <div class="mb-3">
+              <label for="editLink" class="form-label">Link</label>
+              <input type="text" class="form-control" id="editLink" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/js/popper.js"></script>
-      <script src="assets/js/js/bootstrap.min.js"></script>
-      <script src="assets/js/js/main.js"></script>
+  <!-- Modal de Creación de Sede -->
+<div class="modal fade" id="crearSedeModal" tabindex="-1" aria-labelledby="crearSedeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="crearSedeModalLabel">Agregar Nueva Sede</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="crearSedeForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="sala" class="form-label">Sala</label>
+              <input type="text" class="form-control" id="sala" required>
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="direccion" required>
+            </div>
+            <div class="mb-3">
+              <label for="direccionImg" class="form-label">URL Imagen</label>
+              <input type="text" class="form-control" id="direccionImg" required>
+            </div>
+            <div class="mb-3">
+              <label for="link" class="form-label">Link</label>
+              <input type="text" class="form-control" id="link" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Sede</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+    <script src="assets/javaScript/sedesAdmin.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+
+
+
+
 </body>
 </html>
 

@@ -40,8 +40,8 @@ app.get('/', (req, res) => {
   res.send('Inicio ' + mensaje)
 })
 
-// CRUD routes
-// Endpoint de login
+
+// LOGIN
 app.post('/login', async (req, res) => {
   const { nombre, password } = req.body;
 
@@ -79,10 +79,19 @@ app.post('/login', async (req, res) => {
   }
 })
 
+app.get('/admin', verifyToken, (req, res) => {
+  if (req.user.rol === 'admin') {
+    res.sendFile(__dirname + '/UsersAdmin.html'); // c://sdfsdfds/admin.html
+  }
+  res.status(403).send('No tienes permisos para acceder a esta ruta');
+})
+
+
+//CRUD USUARIOS
 app.get('/usuarios', verifyToken, async (req, res) => {
   try {
     const connection = await pool.getConnection();
-    const [rows] = await connection.query('SELECT * FROM usuariosDB');
+    const [rows] = await connection.query('SELECT * FROM usuarios');
     connection.release();
     res.status(200).json(rows);
   } catch (error) {
@@ -97,7 +106,7 @@ app.post('/usuario', async (req, res) => {
   try {
       const connection = await pool.getConnection();
       const [result] = await connection.query(
-          'INSERT INTO usuariosDB (nombre, password, email, rol) VALUES (?, ?, ?, ?)',
+          'INSERT INTO usuarios (nombre, password, email, rol) VALUES (?, ?, ?, ?)',
           [nombre, password, email, rol]
       );
       connection.release();
@@ -115,7 +124,7 @@ app.delete('/usuario/:id', async (req, res) => {
   try {
       const connection = await pool.getConnection();
       const [result] = await connection.query(
-          'DELETE FROM usuariosDB WHERE _id = ?',
+          'DELETE FROM usuarios WHERE _id = ?',
           [usuarioId]
       );
       connection.release();
@@ -131,14 +140,9 @@ app.delete('/usuario/:id', async (req, res) => {
   }
 });
 
-app.get('/admin', verifyToken, (req, res) => {
-  if (req.user.rol === 'admin') {
-    res.sendFile(__dirname + '/UsersAdmin.html'); // c://sdfsdfds/admin.html
-  }
-  res.status(403).send('No tienes permisos para acceder a esta ruta');
-})
 
-//---------SEDES--------
+
+//CRUD SEDES
 
 app.get('/api/sedes', async (req, res) => {
   try {
@@ -152,32 +156,90 @@ app.get('/api/sedes', async (req, res) => {
   }
 });
 
-
 app.post('/api/sede', async (req, res) => {
-  const { nombre, direccion, link, direccion_img } = req.body;
+  const { nombre, sala, direccion, direccion_img, link } = req.body;
+
+  console.log('Datos recibidos:', req.body);
 
   try {
-    // Validación de campos requeridos
-    // if (!nombre || !direccion || !link || !direccion_img) {
-    //   return res.status(400).json({ message: 'Todos los campos son requeridos' });
-    // }
+      if (!nombre || !direccion || !link || !direccion_img) {
+        return res.status(400).json({ message: 'Todos los campos son requeridos' });
+      }
 
     const connection = await pool.getConnection();
     const [result] = await connection.query(
-      'INSERT INTO sedes (nombre, direccion, link, direccion_img) VALUES (?, ?, ?, ?)',
-      [nombre, direccion, link, direccion_img]
+      'INSERT INTO sedes (nombre, sala, direccion, direccion_img, link) VALUES (?, ?, ?, ?, ?)',
+      [nombre, sala, direccion, direccion_img, link]
     );
     connection.release();
 
-    res.status(201).json({ message: 'Sede creado exitosamente', sedeId: result.insertId });
+    res.status(201).json({ message: 'Sede creada exitosamente', sedeId: result.insertId });
   } catch (error) {
-    console.error('Error al crear sede:', error.message);
-    res.status(500).json({ message: 'Error interno del servidor al crear sede' });
+    console.error('Error al crear sede:', error);
+    res.status(500).json({ message: 'Error interno del servidor al crear sede', error: error.message });
   }
 });
 
+app.put('/api/sede/:id', async (req, res) => {
+  const { id } = req.params;
+  const { nombre, sala, direccion, direccion_img, link } = req.body;
 
+  try {
+    if (!nombre || !direccion || !link || !direccion_img) {
+      return res.status(400).json({ message: 'Todos los campos son requeridos' });
+    }
 
+    const connection = await pool.getConnection();
+
+    // Obtener los datos antiguos de la sede
+    const [oldData] = await connection.query('SELECT * FROM sedes WHERE id = ?', [id]);
+
+    if (oldData.length === 0) {
+      connection.release();
+      return res.status(404).json({ message: 'Sede no encontrada' });
+    }
+
+    const [result] = await connection.query(
+      'UPDATE sedes SET nombre = ?, sala = ?, direccion = ?, direccion_img = ?, link = ? WHERE id = ?',
+      [nombre, sala, direccion, direccion_img, link, id]
+    );
+    connection.release();
+
+    res.status(200).json({
+      message: 'Sede actualizada exitosamente',
+      oldData: oldData[0],
+      newData: { id, nombre, sala, direccion, direccion_img, link }
+    });
+  } catch (error) {
+    console.error('Error al actualizar sede:', error.message);
+    res.status(500).json({ message: 'Error interno del servidor al actualizar sede' });
+  }
+});
+
+app.delete('/api/sede/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const connection = await pool.getConnection();
+
+    // Verificar si la sede existe
+    const [result] = await connection.query('SELECT * FROM sedes WHERE id = ?', [id]);
+
+    if (result.length === 0) {
+      connection.release();
+      return res.status(404).json({ message: 'Sede no encontrada' });
+    }
+
+    // Eliminar la sede
+    await connection.query('DELETE FROM sedes WHERE id = ?', [id]);
+    connection.release();
+
+    res.status(200).json({ message: 'Sede eliminada exitosamente' });
+  } catch (error) {
+    console.error('Error al eliminar sede:', error.message);
+    res.status(500).json({ message: 'Error interno del servidor al eliminar sede' });
+  }
+});
 
 
 
