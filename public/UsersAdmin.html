@@ -1,132 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Web dedicada a Buenos Aires Festival de Cine Independiente">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="icon" href="assets/img/buho.png" type="image/png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.bundle.min.js"></script>
-
-    <title>USUARIOS | BAFICI</title>
-</head>
-
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="navbar-brand">
-                <a href="#" class="navbar-brand" href="#"><img src="assets/img/logobafici.png" alt="Logo Bafici"></a>
-            </div>
-            <div class="navbar-toggle" id="navbar-toggle">&#9776;</div>
-            <ul class="navbar-menu" id="navbar-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="sedes.html">Sedes</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="text-bg-dark p-3">
-        <div class="p-5">
-            <h1>Administracion de Usuarios</h1>
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <table class="table table-dark table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Rol</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="usuariosTableBody">
-                </tbody>
-            </table>
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <button type="button" class="btn btn-primary" id="agregarUsuarioBtn">
-                Agregar Usuario
-            </button>
-        </div>
-        <div class="toast bg-white" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-body text-dark">
-                ¿Está seguro de querer borrar este usuario?
-                <div class="mt-2 pt-2 border-top">
-                    <button type="button" class="btn btn-primary btn-sm" id="confirmarEliminarBtn">Sí</button>
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">No</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="modal fade" id="crearUsuarioModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="crearUsuarioModalLabel">Crear Usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="crearUsuarioForm">
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password:</label>
-                            <input type="password" id="password" name="password" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email:</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="rol" class="form-label">Rol:</label>
-                            <input type="text" id="rol" name="rol" class="form-control" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                        id="guardarUsuarioBtn">Guardar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="flex col align-items-center">
-        <div class="iconos-footer text-center flex align-items-center justify-content-center">
-            <a href="https://twitter.com/BaficiOficial"><i class="bi bi-twitter-x"></i></a>
-            <a href="https://es-la.facebook.com/"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/?hl=es"><i class="bi bi-instagram"></i></a>
-        </div>
-
-        <div><img src="assets/img/logoBa.png" alt="Logo Ciudad de Buenos Aires"></div>
-
-    </footer>
-
-    <script src="assets/javaScript/usersAdmin.js"></script>
-</body>
-
-</html> -->
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -137,169 +8,158 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
-    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+    <!-- Replace with your custom CSS -->
     <link rel="stylesheet" href="assets/css/sidebar.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" href="assets/img/buho.png" type="image/png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-
-    <title>SEDES ADMIN | BAFICI</title>
-  </head>
-
-
+    <title>USUARIOS ADMIN | BAFICI</title>
+</head>
 
 <body>
     <div class="wrapper">
+        <!-- Sidebar -->
         <div class="sidebar">
             <img src="assets/img/logobafici.png" alt="" id="logo">
             <ul>
                 <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
                 <li><a href="UsersAdmin.html"><i class="fa fa-user"></i>Usuarios</a></li>
                 <li><a href="sedesAdmin.html"><i class="fa fa-line-chart"></i>Sedes</a></li>
-                <!-- <li><a href="#"><i class="fa fa-comment-o"></i>Comments</a></li>
-                <li><a href="#"><i class="fa fa-gears"></i>Settings</a></li>
-                <li><a href="#"><i class="fa fa-address-book"></i>Contact</a></li>
-                <li><a href="#"><i class="fa fa-map-pin"></i>Map</a></li> -->
-            </ul> 
-
+            </ul>
         </div>
 
-
+        <!-- Main Content -->
         <div class="main_content">
             <div class="header">
                 <button class="toggler"><i class="fa fa-bars"></i></button>
-            </div>  
-            <section class=" p-3">
+            </div>
+
+            <section class="p-3">
                 <div class="p-5">
                     <h2>Administración de Usuarios</h2>
                 </div>
                 <div class="table-responsive">
                     <table class="table align-middle">
-                      <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Rol</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                      </thead>
-                      
-                      <tbody id="sedesTableBody">
-
-                      </tbody>
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Rol</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usuariosTableBody">
+                        </tbody>
                     </table>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-primary" id="agregarSedeBtn" data-bs-toggle="modal" data-bs-target="#crearSedeModal">
-                            Agregar Sede
+                        <button type="button" class="btn btn-primary" id="agregarUsuarioBtn" data-bs-toggle="modal"
+                            data-bs-target="#crearUsuarioModal">
+                            Agregar Usuario
                         </button>
                     </div>
-                  </div>
-        
-
+                </div>
             </section>
 
-        </div>
+            <div class="toast center-toast" data-autohide="false">
+                <div class="toast-header">
+                    <strong class="mr-auto">Confirmar Eliminación</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                </div>
+                <div class="toast-body">
+                    ¿Estás seguro de que deseas eliminar este Usuario?
+                    <button id="confirmarEliminarBtn" class="btn btn-danger">Confirmar</button>
+                </div>
+            </div>
 
-    </div>
-    <div class="toast center-toast" data-autohide="false">
-        <div class="toast-header">
-          <strong class="mr-auto">Confirmar Eliminación</strong>
-          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
-        </div>
-        <div class="toast-body">
-          ¿Estás seguro de que deseas eliminar esta sede?
-          <button id="confirmarEliminarBtn" class="btn btn-danger">Confirmar</button>
-        </div>
-      </div>       
 
-    <!-- Modal de Edición -->
-<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editarModalLabel">Editar Sede</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="editarSedeForm">
-            <input type="hidden" id="editSedeId">
-            <div class="mb-3">
-              <label for="editNombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="editNombre" required>
+            <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel"
+           aria-hidden="true">
+           <div class="modal-dialog">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="editarUsuarioModal">Editar Usuario</h5>
+                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body">
+                       <form id="editarUsuarioForm">
+                           <div class="mb-3">
+                               <label for="editNombre" class="form-label">Nombre</label>
+                               <input type="text" class="form-control" id="editNombre" name="editNombre" required>
+                           </div>
+                           <div class="mb-3">
+                               <label for="editEmail" class="form-label">Email</label>
+                               <input type="email" class="form-control" id="editEmail" name="editEmail" required>
+                           </div>
+                           <div class="mb-3">
+                               <label for="editRol" class="form-label">Rol</label>
+                               <select class="form-select" id="editRol" name="editRol" required>
+                                   <option value="">Seleccionar Rol</option>
+                                   <option value="admin">Administrador</option>
+                                   <option value="editor">Editor</option>
+                                   <option value="usuario">Usuario</option>
+                               </select>
+                           </div>
+                       </form>
+                   </div>
+                   <div class="modal-footer">
+                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                       <button type="button" class="btn btn-primary" id="guardarCambiosBtn">Guardar Cambios</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div class="modal fade" id="crearUsuarioModal" tabindex="-1" aria-labelledby="crearUsuarioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="crearUsuarioModalLabel">Crear Nuevo Usuario</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="mb-3">
-              <label for="editSala" class="form-label">Sala</label>
-              <input type="text" class="form-control" id="editSala" required>
+            <div class="modal-body">
+              <form id="crearUsuarioForm">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="password" required>
+                </div>
+                <div class="mb-3">
+                  <label for="rol" class="form-label">Rol</label>
+                  <select class="form-select" id="rol" required>
+                    <option value="">Seleccionar Rol</option>
+                    <option value="admin">admin</option>
+                    <option value="user">Usuario</option>
+                  </select>
+                </div>
+              </form>
             </div>
-            <div class="mb-3">
-              <label for="editDireccion" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="editDireccion" required>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="guardarUsuarioBtn">Guardar Usuario</button>
             </div>
-            <div class="mb-3">
-              <label for="editDireccionImg" class="form-label">URL Imagen</label>
-              <input type="text" class="form-control" id="editDireccionImg" required>
-            </div>
-            <div class="mb-3">
-              <label for="editLink" class="form-label">Link</label>
-              <input type="text" class="form-control" id="editLink" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  
-  <!-- Modal de Creación de Sede -->
-<div class="modal fade" id="crearSedeModal" tabindex="-1" aria-labelledby="crearSedeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="crearSedeModalLabel">Agregar Nueva Sede</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form id="crearSedeForm">
-            <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" required>
-            </div>
-            <div class="mb-3">
-              <label for="sala" class="form-label">Sala</label>
-              <input type="text" class="form-control" id="sala" required>
-            </div>
-            <div class="mb-3">
-              <label for="direccion" class="form-label">Dirección</label>
-              <input type="text" class="form-control" id="direccion" required>
-            </div>
-            <div class="mb-3">
-              <label for="direccionImg" class="form-label">URL Imagen</label>
-              <input type="text" class="form-control" id="direccionImg" required>
-            </div>
-            <div class="mb-3">
-              <label for="link" class="form-label">Link</label>
-              <input type="text" class="form-control" id="link" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar Sede</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+      
 
-    <script src="assets/javaScript/sedesAdmin.js"></script>    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="assets/js/jquery.min.js"></script>
-
-
-
-
+    <!-- Your custom JavaScript file -->
+    <script src="assets/javaScript/usersAdmin.js"></script>
 </body>
-</html>
 
+</html>

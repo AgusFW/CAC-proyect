@@ -88,7 +88,7 @@ app.get('/admin', verifyToken, (req, res) => {
 
 
 //CRUD USUARIOS
-app.get('/usuarios', verifyToken, async (req, res) => {
+app.get('/usuarios',  async (req, res) => {
   try {
     const connection = await pool.getConnection();
     const [rows] = await connection.query('SELECT * FROM usuarios');
