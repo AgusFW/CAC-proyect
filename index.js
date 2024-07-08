@@ -244,9 +244,42 @@ app.delete('/api/sede/:id', async (req, res) => {
 
 
 
+app.get('/api/programacion', async (req, res) => {
+  try {
+    const connection = await pool.getConnection();
+    const [rows] = await connection.query('SELECT * FROM programacion');
+    connection.release();
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error('Error al obtener la programación', error);
+    res.status(500).json({ message: 'Error interno del servidor' });
+  }
+});
 
 
+app.post('/api/programacion', async (req, res) => {
+  const { pelicula, descripcion, sala, horario, img } = req.body;
 
+  console.log('Datos recibidos:', req.body);
+
+  try {
+    if (!pelicula || !descripcion || !sala || !horario || !img) {
+      return res.status(400).json({ message: 'Todos los campos son requeridos' });
+    }
+
+    const connection = await pool.getConnection();
+    const [result] = await connection.query(
+      'INSERT INTO programacion (pelicula, descripcion, sala, horario, img) VALUES (?, ?, ?, ?, ?)',
+      [pelicula, descripcion, sala, horario, img]
+    );
+    connection.release();
+
+    res.status(201).json({ message: 'Programación creada exitosamente', programacionId: result.insertId });
+  } catch (error) {
+    console.error('Error al crear programación:', error);
+    res.status(500).json({ message: 'Error interno del servidor al crear programación', error: error.message });
+  }
+});
 
 
 app.get('/admin', verifyToken, (req, res) => {
