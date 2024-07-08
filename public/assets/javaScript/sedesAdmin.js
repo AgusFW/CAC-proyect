@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         `;
         sedesTableBody.appendChild(row);
   
-        // Agregar event listener para eliminar esta sede
         const eliminarBtn = row.querySelector('.eliminar-btn');
         eliminarBtn.addEventListener('click', async () => {
           const confirmarEliminarToast = new bootstrap.Toast(document.querySelector('.toast'));
@@ -57,10 +56,8 @@ document.addEventListener('DOMContentLoaded', async function () {
           };
         });
   
-        // Agregar event listener para editar esta sede
         const editarBtn = row.querySelector('.editar-btn');
         editarBtn.addEventListener('click', () => {
-          // Mostrar el formulario de edición con los datos actuales de la sede
           mostrarFormularioEdicion(sede);
         });
       });

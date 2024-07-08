@@ -6,8 +6,8 @@ import 'dotenv/config';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-const __filename = fileURLToPath(import.meta.url); // c://sdfsdfds/index.js
-const __dirname = dirname(__filename); // c://sdfsdfds/
+const __filename = fileURLToPath(import.meta.url); 
+const __dirname = dirname(__filename);
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const app = express();
@@ -47,7 +47,7 @@ app.post('/login', async (req, res) => {
 
   try {
     const connection = await pool.getConnection();
-    const [rows] = await connection.query('SELECT * FROM usuariosDB WHERE nombre = ?', [nombre]);
+    const [rows] = await connection.query('SELECT * FROM usuarios WHERE nombre = ?', [nombre]);
     const user = rows[0];
 
     if (!user) {
@@ -79,12 +79,14 @@ app.post('/login', async (req, res) => {
   }
 })
 
-app.get('/admin', verifyToken, (req, res) => {
-  if (req.user.rol === 'admin') {
-    res.sendFile(__dirname + '/UsersAdmin.html'); // c://sdfsdfds/admin.html
+
+app.get('/sedesAdmin', verifyToken, (req, res) => {
+  if (req.user && req.user.rol === 'admin') {
+    res.sendFile(__dirname + '/sedesAdmin.html');
+  } else {
+    res.status(403).send('Acceso denegado. Se requiere autenticación como administrador.');
   }
-  res.status(403).send('No tienes permisos para acceder a esta ruta');
-})
+});
 
 
 //CRUD USUARIOS
@@ -144,6 +146,7 @@ app.delete('/usuario/:id', async (req, res) => {
 
 //CRUD SEDES
 
+
 app.get('/api/sedes', async (req, res) => {
   try {
     const connection = await pool.getConnection();
@@ -155,6 +158,10 @@ app.get('/api/sedes', async (req, res) => {
     res.status(500).json({ message: 'Error interno del servidor' });
   }
 });
+
+
+
+
 
 app.post('/api/sede', async (req, res) => {
   const { nombre, sala, direccion, direccion_img, link } = req.body;
@@ -242,7 +249,7 @@ app.delete('/api/sede/:id', async (req, res) => {
 });
 
 
-
+//PROGRAMACION
 
 app.get('/api/programacion', async (req, res) => {
   try {
@@ -282,161 +289,32 @@ app.post('/api/programacion', async (req, res) => {
 });
 
 
+// app.get('/admin', verifyToken, (req, res) => {
+//   if (req.user.rol === 'admin') {
+//     res.sendFile(__dirname + '/usersAdmin.html'); 
+//     res.sendFile(__dirname + '/sedesAdmin.html'); 
+//   }
+//   res.status(403).send('No tienes permisos para acceder a esta ruta');
+// })
+
 app.get('/admin', verifyToken, (req, res) => {
   if (req.user.rol === 'admin') {
-    res.sendFile(__dirname + '/UsersAdmin.html'); // c://sdfsdfds/admin.html
-  }
-  res.status(403).send('No tienes permisos para acceder a esta ruta');
-})
-
-
-
-
-
-
-app.get('/logout', (req, res) => {
-  res.clearCookie('token').send('Logout exitoso');
-})
-
-
-/*//Todos los usuarios
-app.get('/users', async (req, res) => {
-  try {
-    let query = req.query
-    // Toma una conexión de la pool
-    const connection = await pool.getConnection()
-    // Cuando hace la consulta, se almacena la respuesta y se libera la conexión
-    const [rows] = await connection.query('SELECT * FROM usuariosDB')
-    // console.log("ROWS -->", rows);
-    connection.release()
-    // Envía la respuesta al cliente
-    let filtrados = rows.filter((registro) => registro.rol === query.rol ) 
-    console.log(filtrados)
-    if (filtrados.length > 0) {
-        res.json(filtrados) 
-    } else {
-        res.json(rows[0])
-    }
-  } catch (err) {
-    console.error('Error connecting to database', err)
-    res.status(500).send('Internal server error')
-  }
-})
-
-// Autenticación de usuarios
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const connection = await pool.getConnection();
-    const [rows] = await connection.query('SELECT * FROM usuariosDB WHERE email = ?', [email]);
-    const user = rows[0];
-
-    if (!user) {
-        return res.status(401).json({ message: 'Usuario no encontrado' });
-    }
-    
-    if (user.password !== password) {
-        return res.status(401).json({ message: 'Contraseña incorrecta' });
-    }
-
-    res.status(200).json({ message: 'Autenticación exitosa' });
-
-    connection.release();
-  } catch (error) {
-      console.error('Error al autenticar al usuario', error);
-      res.status(500).json({ message: 'Error interno del servidor' });
+    res.sendFile(__dirname + '/sedesAdmin.html');
+  } else {
+    res.status(403).send('No tienes permisos para acceder a esta ruta');
   }
 });
 
-//Un usuario segun id
-app.get('/users/:id', async (req, res) => {
-  try {
-    const id = req.params.id
 
-    const connection = await pool.getConnection()
-    const [rows] = await connection.query(
-      'SELECT * FROM usuariosDB WHERE id = ?',
-      [id]
-    )
-    connection.release()
-    if (rows.length === 0) {
-      res.status(404).json({ mensaje: 'User not found' })
-    } else {
-        
-       res.json(rows[0])
-    }
-  } catch (err) {
-    console.error('Error connecting to database', err)
-    res.status(500).send('Internal server error')
-  }
-})
 
-//crear usuario
-app.post('/users', async (req, res) => {
-  try {
-    console.log('REQ.BODY -->', req.body)
-    // Obtiene los valores del formulario
-    const { nombre, email, password, rol } = req.body
-    const connection = await pool.getConnection()
-    // const [result] = await connection.query('INSERT INTO usuarios (nombre, email, password, rol) VALUES (?, ?, ?, ?)', [nombre, email, password, rol]);
-    const [result] = await connection.query('INSERT INTO usuariosDB SET ?', [
-      req.body
-    ])
-    connection.release()
-    res.json({ id: result.insertId, nombre, email, rol })
-    // res.redirect('/' + "?mensaje=Usuario creado correctamente")
-  } catch (err) {
-    console.error('Error connecting to database', err)
-    res.status(500).send('Internal server error')
-  }
-})
 
-// Actualizar un usuario
-app.post('/users/:id', async (req, res) => {
-  try {
-    const id = req.params.id
-    const { nombre, email, password, rol } = req.body
-    const connection = await pool.getConnection()
-    const [result] = await connection.query(
-      'UPDATE usuariosDB SET nombre = ?, email = ?, password = ?, rol = ? WHERE id = ?',
-      [nombre, email, password, rol, id]
-    )
-    // const [result] = await connection.query('INSERT INTO usuarios SET ?', [req.body]);
-    connection.release()
-    if (result.affectedRows === 0) {
-      res.status(404).json({ mensaje: 'User not found' })
-    } else {
-      // res.json({ mensaje: 'User updated successfully' });
-      res.redirect('/' + '?mensaje=Usuario actualizado')
-    }
-  } catch (err) {
-    console.error('Error connecting to database', err)
-    res.status(500).send('Internal server error')
-  }
-})
+const path = require('path');
 
-//borrar un usuario
-app.get('/users/borrar/:id', async (req, res) => {
-  try {
-    const id = req.params.id
-    const connection = await pool.getConnection()
-    const [result] = await connection.query(
-      'DELETE FROM usuariosDB WHERE id = ?',
-      [id]
-    )
-    connection.release()
-    if (result.affectedRows === 0) {
-      res.status(404).json({ mensaje: 'User not found' })
-    } else {
-      res.json({ mensaje: 'User deleted successfully' })
-      // res.redirect('/' + "?mensaje=Usuario eliminado");
-    }
-  } catch (err) {
-    console.error('Error connecting to database', err)
-    res.status(500).send('Internal server error')
-  }
-})*/
+app.get('/logout', (req, res) => {
+  res.clearCookie('token');
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
+});
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
