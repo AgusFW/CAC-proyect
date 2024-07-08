@@ -21,16 +21,16 @@ async function load() {
             card.className = 'card mb-3';
             card.innerHTML = `
             <div>
-                <a href="${dato.pelicula}" target="_blank">
+
                 <div class="cards">
-                    <img src="${dato.descripcion}" alt="${dato.nombre}">
+                    <img src="${dato.img}" alt="${dato.pelicula}">
                     <div class="cards-content">
-                    <h3>${dato.sala}</h3>
-                    <span class="badgeRojo">${dato.horario}</span>
-                    <p>${dato.direccion}</p>
+                    <h3>${dato.pelicula}</h3>
+                    <span class="badgeRojo">Sala ${dato.sala} - ${dato.horario} hs</span>
+                    <p>${dato.descripcion}</p>
                     </div>
                 </div>
-                </a>
+
             </div>
             `;
             dataContainer.appendChild(card);
@@ -41,6 +41,9 @@ async function load() {
         console.error('Error:', error);
     }
 }
+
+
+
 
 // Cargar sedes al cargar la página
 document.addEventListener('DOMContentLoaded', async function () {
