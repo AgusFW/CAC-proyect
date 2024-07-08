@@ -126,7 +126,7 @@ app.delete('/usuario/:id', async (req, res) => {
   try {
       const connection = await pool.getConnection();
       const [result] = await connection.query(
-          'DELETE FROM usuarios WHERE _id = ?',
+          'DELETE FROM usuarios WHERE id = ?',
           [usuarioId]
       );
       connection.release();
@@ -142,6 +142,43 @@ app.delete('/usuario/:id', async (req, res) => {
   }
 });
 
+
+
+app.put('/usuario/:id', async (req, res) => {
+  const { id } = req.params;
+  const { nombre, email, rol } = req.body;
+
+  try {
+    if (!nombre || !email || !rol ) {
+      return res.status(400).json({ message: 'Todos los campos son requeridos' });
+    }
+
+    const connection = await pool.getConnection();
+
+    // Obtener los datos antiguos de la sede
+    const [oldData] = await connection.query('SELECT * FROM usuarios WHERE id = ?', [id]);
+
+    if (oldData.length === 0) {
+      connection.release();
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    const [result] = await connection.query(
+      'UPDATE usuarios SET nombre = ?, email = ?, rol = ?, WHERE id = ?',
+      [nombre, email, rol]
+    );
+    connection.release();
+
+    res.status(200).json({
+      message: 'Usario actualizada exitosamente',
+      oldData: oldData[0],
+      newData: { id, nombre, sala, direccion, direccion_img, link }
+    });
+  } catch (error) {
+    console.error('Error al actualizar usuario:', error.message);
+    res.status(500).json({ message: 'Error interno del servidor al actualizar usuario' });
+  }
+});
 
 
 //CRUD SEDES

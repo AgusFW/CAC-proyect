@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 // Event listener para el botón de eliminar usuario
                 const eliminarBtn = row.querySelector('.eliminar-btn');
-                eliminarBtn.addEventListener('click', async () => {
+                eliminarBtn.addEventListener('click', () => {
                     const confirmarEliminarToast = new bootstrap.Toast(document.querySelector('.toast'));
                     confirmarEliminarToast.show();
 
@@ -135,12 +135,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.getElementById('editEmail').value = usuario.email;
         document.getElementById('editRol').value = usuario.rol;
 
-        const editarModal = new bootstrap.Modal(document.getElementById('editarUsuarioModal'));
+        const editarModal = new bootstrap.Modal(document.getElementById('editarModal'));
         editarModal.show();
     }
 
-    // Función para guardar los cambios al editar un usuario
-    async function guardarCambiosUsuario() {
+    // Event listener para guardar los cambios al editar un usuario
+    document.getElementById('guardarCambiosBtn').addEventListener('click', async function () {
         const id = document.getElementById('editUsuarioId').value;
         const nombre = document.getElementById('editNombre').value;
         const email = document.getElementById('editEmail').value;
@@ -163,10 +163,10 @@ document.addEventListener('DOMContentLoaded', async function () {
             await loadUsuarios();
 
             // Ocultar el modal de edición
-            const editarModal = bootstrap.Modal.getInstance(document.getElementById('editarUsuarioModal'));
+            const editarModal = bootstrap.Modal.getInstance(document.getElementById('editarModal'));
             editarModal.hide();
         } catch (error) {
             console.error('Error:', error);
         }
-    }
+    });
 });
