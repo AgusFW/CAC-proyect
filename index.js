@@ -47,7 +47,7 @@ app.post('/login', async (req, res) => {
 
   try {
     const connection = await pool.getConnection();
-    const [rows] = await connection.query('SELECT * FROM usuarios WHERE nombre = ?', [nombre]);
+    const [rows] = await connection.query('SELECT * FROM usuarios WHERE email = ?', [nombre]);
     const user = rows[0];
 
     if (!user) {
@@ -289,13 +289,6 @@ app.post('/api/programacion', async (req, res) => {
 });
 
 
-// app.get('/admin', verifyToken, (req, res) => {
-//   if (req.user.rol === 'admin') {
-//     res.sendFile(__dirname + '/usersAdmin.html'); 
-//     res.sendFile(__dirname + '/sedesAdmin.html'); 
-//   }
-//   res.status(403).send('No tienes permisos para acceder a esta ruta');
-// })
 
 app.get('/admin', verifyToken, (req, res) => {
   if (req.user.rol === 'admin') {
@@ -305,14 +298,34 @@ app.get('/admin', verifyToken, (req, res) => {
   }
 });
 
+app.get('/UsersAdmin', verifyToken, (req, res) => {
+  if (req.user.rol === 'admin') {
+    res.sendFile(__dirname + '/UsersAdmin.html');
+  } else {
+    res.status(403).send('No tienes permisos para acceder a esta ruta');
+  }
+});
+
+app.get('/programacionAdmin', verifyToken, (req, res) => {
+  if (req.user.rol === 'admin') {
+    res.sendFile(__dirname + '/programacionAdmin.html');
+  } else {
+    res.status(403).send('No tienes permisos para acceder a esta ruta');
+  }
+});
+
+app.get('/sedesAdmin.html', verifyToken, (req, res) => {
+  if (req.user.rol === 'admin') {
+    res.sendFile(__dirname + '/sedesAdmin.html');
+  } else {
+    res.status(403).send('No tienes permisos para acceder a esta ruta');
+  }
+});
 
 
-
-const path = require('path');
 
 app.get('/logout', (req, res) => {
-  res.clearCookie('token');
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+  res.clearCookie('token').send('Logout exitoso');
 });
 
 
